@@ -574,6 +574,40 @@ footer {
     color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
 }
+.experience-item {
+    display: flex;
+    flex-direction: column; /* stack content vertically */
+}
+.btn-mimea{
+      align-self: flex-end; 
+   display: inline-block;
+    margin-top: 15px; 
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid var(--primary);
+    text-align: right;
+}
+
+.btn-mimea:hover {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.btn-mimea-outline {
+    background-color: transparent;
+    color: var(--primary);
+    margin-left: 15px;
+}
+
+.btn-mimea-outline:hover {
+    background-color: var(--primary);
+    color: white;
+}
 
 /* Responsive */
 @media (max-width: 992px) {
