@@ -364,6 +364,17 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.3s;
 }
+.edu-logo {
+    width: 40px;          /* size of the bubble */
+    height: 40px;
+    border-radius: 50%;   /* makes it circular */
+    background-color: white;  /* white background */
+    object-fit: cover;    /* scale image to fit circle */
+    margin-right: 10px;   /* space between logo and text */
+    vertical-align: middle; /* aligns with text */
+    border: 1px solid #ddd; /* optional subtle border */
+}
+
 
 .education-item:hover {
     transform: translateY(-5px);
@@ -466,6 +477,7 @@ section {
     background-color: transparent;
     color: var(--primary);
     margin-left: 15px;
+
 }
 
 .project-links a:last-child:hover {
@@ -473,31 +485,22 @@ section {
     color: white;
 }
 
-/* Contact Section */
-.contact-content {
-    display: flex;
-    justify-content: space-between;
-}
-
-.contact-info {
-    flex: 1;
-    padding-right: 50px;
-}
-
-.contact-info h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: var(--dark);
+#contact{
+   text-align: center;
 }
 
 .contact-details {
+    display: flex;
+    justify-content: center; /* centers the whole row */
+    gap: 40px;               /* spacing between each item */
     margin-bottom: 30px;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .contact-item i {
@@ -509,64 +512,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
-.contact-form {
-    flex: 1;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--dark);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid var(--light-gray);
-    border-radius: 5px;
-    font-size: 16px;
-    transition: all 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--primary);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
-}
-
-.form-group textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.submit-btn {
-    background-color: var(--primary);
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: var(--secondary);
-}
 
 /* Footer */
 footer {
