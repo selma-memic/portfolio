@@ -200,6 +200,7 @@ p {
     gap: 15px;
     flex-wrap: wrap;
     margin-bottom: 30px;
+    justify-content: center; /* Add this to center all buttons */
 }
 
 .btn-cv {
@@ -207,7 +208,9 @@ p {
     border-color: var(--dark);
     display: flex;
     align-items: center;
+    justify-content: center; /* Center text horizontally */
     gap: 8px;
+    margin: 0 auto; /* Center button itself */
 }
 
 .btn-cv:hover {
@@ -408,10 +411,20 @@ section {
 }
 
 /* Projects Section */
+.projects {
+    padding: 60px 0;
+}
+
+.projects .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    align-items: stretch;
 }
 
 .project-card {
@@ -420,6 +433,9 @@ section {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -445,44 +461,52 @@ section {
 
 .project-content {
     padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-content h3 {
     margin-bottom: 10px;
     color: var(--dark);
+    font-size: 20px;
 }
 
 .project-content p {
     margin-bottom: 15px;
     font-size: 14px;
+    color: var(--gray);
+    flex-grow: 1;
+}
+
+.project-content strong {
+    color: var(--dark);
+    font-weight: 600;
 }
 
 .project-links {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .project-links a {
     display: inline-block;
-    padding: 6px 15px;
-    font-size: 13px;
-    font-weight: 500;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
     border-radius: 50px;
     background-color: var(--primary);
     color: white;
     text-decoration: none;
-    margin-right: 8px;
-    transition: 0.3s;
+    transition: all 0.3s;
+    border: 2px solid var(--primary);
+    text-align: center;
 }
 
-.project-links a:last-child {
-    background: transparent;
+.project-links a:hover {
+    background-color: transparent;
     color: var(--primary);
-}
-
-.project-links a:last-child:hover {
-    background-color: var(--primary);
-    color: white;
 }
 
 
@@ -610,57 +634,177 @@ footer {
     color: white;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .hero-content, .about-content, .contact-content {
-        flex-direction: column;
-    }
-
-    .hero-text, .about-text, .contact-info {
-        padding-right: 0;
-        margin-bottom: 50px;
-    }
-
-    .hero-image, .about-image {
-        margin-top: 50px;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    .typewriter {
-        font-size: 20px;
-    }
-}
-
+/* Mobile Responsiveness (up to 768px) */
 @media (max-width: 768px) {
+    /* Header */
     .nav-links {
-        display: none;
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 30px;
+        transition: 0.3s;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
     }
 
     .hamburger {
         display: block;
+        font-size: 24px;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
+    /* Hero Section */
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .hero-text {
+        padding-right: 0;
+        margin-top: 30px;
     }
 
     .hero-buttons {
-        flex-direction: row;
-        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .hero-buttons .btn {
-        width: auto;
+    .btn, .btn-outline, .btn-cv {
+        width: 100%;
+        max-width: 250px; /* Optional: Set max width for better appearance */
+        margin: 5px 0 !important; /* Reset any margins */
+        text-align: center;
+        justify-content: center;
+    }
+    
+
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+    }
+
+    .skill-tags {
+        justify-content: center;
+    }
+
+    /* Education Section - Centered Text */
+    .education-item {
+        text-align: center;
     }
 
     .education-header {
         flex-direction: column;
     }
 
-    .education-date {
+    .education-title h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .edu-logo {
+        margin-bottom: 10px;
+    }
+
+    /* Experience Section */
+    .experience-header {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    .experience-date {
         margin-top: 10px;
+    }
+
+    /* Mimea Project Button Centered */
+    .btn-mimea {
+        align-self: center;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Contact */
+    .contact-details {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-item i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Footer */
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+  
+}
+
+/* Small Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .typewriter {
+        font-size: 18px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    /* Education Section Adjustments */
+    .education-title h3 {
+        font-size: 18px;
+    }
+
+    .education-title p {
+        font-size: 14px;
+    }
+
+    /* Project Cards */
+    .project-content h3 {
+        font-size: 20px;
+    }
+
+    .project-content p {
+        font-size: 14px;
     }
 }
