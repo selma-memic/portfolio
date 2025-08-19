@@ -200,7 +200,6 @@ p {
     gap: 15px;
     flex-wrap: wrap;
     margin-bottom: 30px;
-    justify-content: center; /* Add this to center all buttons */
 }
 
 .btn-cv {
@@ -208,9 +207,7 @@ p {
     border-color: var(--dark);
     display: flex;
     align-items: center;
-    justify-content: center; /* Center text horizontally */
     gap: 8px;
-    margin: 0 auto; /* Center button itself */
 }
 
 .btn-cv:hover {
@@ -664,7 +661,7 @@ footer {
         font-size: 24px;
     }
 
-    /* Hero Section */
+    /* Hero Section - Fixed button centering */
     .hero-content {
         flex-direction: column-reverse;
         text-align: center;
@@ -679,17 +676,22 @@ footer {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px; /* Added for consistent spacing */
     }
 
-    .btn, .btn-outline, .btn-cv {
+    /* Only modify button layout on mobile */
+    .hero-buttons > * {
         width: 100%;
-        max-width: 250px; /* Optional: Set max width for better appearance */
-        margin: 5px 0 !important; /* Reset any margins */
+        max-width: 250px;
+        margin: 0 !important;
         text-align: center;
+    }
+
+    .btn-cv {
         justify-content: center;
     }
-    
 
+    /* Rest of your existing mobile styles remain unchanged */
     /* About Section */
     .about-content {
         flex-direction: column;
@@ -768,7 +770,6 @@ footer {
         flex-direction: column;
         gap: 15px;
     }
-  
 }
 
 /* Small Mobile Devices (up to 480px) */
@@ -781,8 +782,9 @@ footer {
         font-size: 18px;
     }
 
-    .hero-buttons .btn {
-        width: 100%;
+    /* Hero buttons - removed width:100% to prevent stretching */
+    .hero-buttons > * {
+        max-width: 100%;
     }
 
     .social-links {
