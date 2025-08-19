@@ -410,7 +410,7 @@ section {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
@@ -418,13 +418,13 @@ section {
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: all 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
 .project-image {
@@ -453,31 +453,31 @@ section {
 }
 
 .project-content p {
-    margin-bottom: 20px;
-    font-size: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
 }
 
 .project-links {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .project-links a {
     display: inline-block;
-    padding: 8px 20px;
+    padding: 6px 15px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 50px;
     background-color: var(--primary);
     color: white;
-    border-radius: 50px;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s;
+    margin-right: 8px;
+    transition: 0.3s;
 }
 
 .project-links a:last-child {
-    background-color: transparent;
+    background: transparent;
     color: var(--primary);
-    margin-left: 15px;
-
 }
 
 .project-links a:last-child:hover {
@@ -485,14 +485,15 @@ section {
     color: white;
 }
 
+
 #contact{
    text-align: center;
 }
 
 .contact-details {
     display: flex;
-    justify-content: center; /* centers the whole row */
-    gap: 40px;               /* spacing between each item */
+    justify-content: center; 
+    gap: 40px;               
     margin-bottom: 30px;
 }
 
