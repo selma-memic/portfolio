@@ -631,7 +631,6 @@ footer {
     color: white;
 }
 
-/* Mobile Responsiveness (up to 768px) */
 @media (max-width: 768px) {
     /* Header */
     .nav-links {
@@ -661,7 +660,7 @@ footer {
         font-size: 24px;
     }
 
-    /* Hero Section - Fixed button centering */
+    /* Hero Section */
     .hero-content {
         flex-direction: column-reverse;
         text-align: center;
@@ -676,10 +675,9 @@ footer {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
-        gap: 15px; /* Added for consistent spacing */
+        gap: 15px;
     }
 
-    /* Only modify button layout on mobile */
     .hero-buttons > * {
         width: 100%;
         max-width: 250px;
@@ -691,16 +689,40 @@ footer {
         justify-content: center;
     }
 
-    /* Rest of your existing mobile styles remain unchanged */
-    /* About Section */
-    .about-content {
+  /* Skill Categories Centering - This will work */
+    .skills {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-category {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .skill-category h3 {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto 15px;
+        text-align: center;
+    }
+
+    .skill-category h3 i {
+        margin-right: 10px;
     }
 
     .skill-tags {
+        display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
     }
-
     /* Education Section - Centered Text */
     .education-item {
         text-align: center;
@@ -772,7 +794,6 @@ footer {
     }
 }
 
-/* Small Mobile Devices (up to 480px) */
 @media (max-width: 480px) {
     h1 {
         font-size: 32px;
@@ -782,7 +803,6 @@ footer {
         font-size: 18px;
     }
 
-    /* Hero buttons - removed width:100% to prevent stretching */
     .hero-buttons > * {
         max-width: 100%;
     }
